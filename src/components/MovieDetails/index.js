@@ -2,14 +2,19 @@ import { useParams } from "react-router-dom";
 
 function MovieDetails({ movies }) {
   const { movieId } = useParams();
-  console.log(movieId);
 
-  const movieChoice = movies.find((movie) => movie.id === movieId);
+  const movieChoice = movies.find((el) => el.id === parseInt(movieId));
 
-  console.log(movieChoice);
+  console.log("useParams es", movieId);
+
+  console.log(movies);
+
+  console.log("movieChoice es", movieChoice);
+
   return (
     <div className="comp purple">
-      <h1>patatas</h1>
+      <h1>{movieChoice.title}</h1>
+      <p>{movieChoice.description}</p>
     </div>
   );
 }
